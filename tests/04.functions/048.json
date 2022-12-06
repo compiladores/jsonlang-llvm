@@ -1,0 +1,37 @@
+[{
+		"function":	"inc",
+		"args":	["x"],
+		"block":	[{
+				"return":	{
+					"binop":	"+",
+					"argl":	"x",
+					"argr":	1
+				}
+			}]
+	}, {
+		"function":	"add",
+		"args":	["x", "y"],
+		"block":	[{
+				"set":	"z",
+				"value":	0
+			}, {
+				"iterator":	"i",
+				"from":	0,
+				"to":	"x",
+				"do":	[{
+						"set":	"z",
+						"value":	{
+							"call":	"inc",
+							"args":	["z"]
+						}
+					}]
+			}, {
+				"return":	"z"
+			}]
+	}, {
+		"set":	"out",
+		"value":	{
+			"call":	"add",
+			"args":	[4, 3]
+		}
+	}]

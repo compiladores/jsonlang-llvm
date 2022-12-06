@@ -1,0 +1,26 @@
+[{
+		"set":	"x",
+		"value":	{
+			"unop":	"-",
+			"arg":	10
+		}
+	}, {
+		"if":	[{
+				"cond":	{
+					"binop":	">",
+					"argl":	"x",
+					"argr":	0
+				},
+				"then":	[{
+						"set":	"y",
+						"value":	44
+					}]
+			}],
+		"else":	[{
+				"set":	"y",
+				"value":	88
+			}]
+	}, {
+		"set":	"out",
+		"value":	"y"
+	}]

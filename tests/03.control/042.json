@@ -1,0 +1,61 @@
+[{
+		"set":	"x",
+		"value":	{
+			"unop":	"-",
+			"arg":	55
+		}
+	}, {
+		"set":	"y",
+		"value":	0
+	}, {
+		"set":	"z",
+		"value":	0
+	}, {
+		"while":	{
+			"binop":	"<",
+			"argl":	"x",
+			"argr":	100
+		},
+		"do":	[{
+				"set":	"y",
+				"value":	{
+					"binop":	"+",
+					"argl":	{
+						"binop":	"+",
+						"argl":	"y",
+						"argr":	"x"
+					},
+					"argr":	1
+				}
+			}, {
+				"set":	"x",
+				"value":	{
+					"binop":	"+",
+					"argl":	"x",
+					"argr":	10
+				}
+			}, {
+				"if":	[{
+						"cond":	{
+							"binop":	">",
+							"argl":	"x",
+							"argr":	50
+						},
+						"then":	["break"]
+					}]
+			}, {
+				"set":	"z",
+				"value":	{
+					"binop":	"+",
+					"argl":	"z",
+					"argr":	1
+				}
+			}]
+	}, {
+		"set":	"out",
+		"value":	{
+			"binop":	"+",
+			"argl":	"y",
+			"argr":	"z"
+		}
+	}]

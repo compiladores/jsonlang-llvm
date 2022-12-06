@@ -1,0 +1,27 @@
+[{
+		"set":	"i",
+		"value":	100
+	}, {
+		"set":	"x",
+		"value":	0
+	}, {
+		"iterator":	"i",
+		"from":	0,
+		"to":	8,
+		"step":	2,
+		"do":	[{
+				"set":	"x",
+				"value":	{
+					"binop":	"+",
+					"argl":	"x",
+					"argr":	"i"
+				}
+			}]
+	}, {
+		"set":	"out",
+		"value":	{
+			"binop":	"+",
+			"argl":	"x",
+			"argr":	"i"
+		}
+	}]

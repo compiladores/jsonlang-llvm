@@ -1,0 +1,35 @@
+[{
+		"set":	"x",
+		"value":	20
+	}, {
+		"set":	"y",
+		"value":	0
+	}, {
+		"do":	[{
+				"set":	"x",
+				"value":	{
+					"binop":	"+",
+					"argl":	"x",
+					"argr":	1
+				}
+			}, {
+				"set":	"y",
+				"value":	{
+					"binop":	"+",
+					"argl":	"y",
+					"argr":	2
+				}
+			}],
+		"until":	{
+			"binop":	">",
+			"argl":	"y",
+			"argr":	"x"
+		}
+	}, {
+		"set":	"out",
+		"value":	{
+			"binop":	"*",
+			"argl":	"y",
+			"argr":	"x"
+		}
+	}]

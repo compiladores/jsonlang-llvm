@@ -1,0 +1,35 @@
+[{
+		"set":	"x",
+		"value":	0
+	}, {
+		"function":	"make_it_six",
+		"args":	[],
+		"block":	[{
+				"set":	"x",
+				"value":	{
+					"binop":	"+",
+					"argl":	"x",
+					"argr":	1
+				}
+			}, {
+				"if":	[{
+						"cond":	{
+							"binop":	"<",
+							"argl":	"x",
+							"argr":	6
+						},
+						"then":	[{
+								"call":	"make_it_six",
+								"args":	[]
+							}]
+					}]
+			}, {
+				"return":	"x"
+			}]
+	}, {
+		"set":	"out",
+		"value":	{
+			"call":	"make_it_six",
+			"args":	[]
+		}
+	}]

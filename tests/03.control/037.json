@@ -1,0 +1,31 @@
+[{
+		"set":	"x",
+		"value":	0
+	}, {
+		"set":	"y",
+		"value":	0
+	}, {
+		"while":	{
+			"binop":	"<",
+			"argl":	"x",
+			"argr":	12
+		},
+		"do":	[{
+				"set":	"y",
+				"value":	{
+					"binop":	"+",
+					"argl":	"y",
+					"argr":	"x"
+				}
+			}, {
+				"set":	"x",
+				"value":	{
+					"binop":	"+",
+					"argl":	"x",
+					"argr":	1
+				}
+			}]
+	}, {
+		"set":	"out",
+		"value":	"y"
+	}]

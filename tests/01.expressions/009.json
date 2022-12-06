@@ -1,0 +1,23 @@
+[{
+		"set":	"out",
+		"value":	{
+			"binop":	"^",
+			"argl":	7,
+			"argr":	{
+				"binop":	"^",
+				"argl":	7,
+				"argr":	{
+					"unop":	"-",
+					"arg":	{
+						"binop":	"^",
+						"argl":	{
+							"binop":	"/",
+							"argl":	1,
+							"argr":	2
+						},
+						"argr":	2
+					}
+				}
+			}
+		}
+	}]

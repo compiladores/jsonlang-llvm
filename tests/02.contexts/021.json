@@ -1,0 +1,13 @@
+[{
+		"set":	"x",
+		"value":	1
+	}, [{
+			"declare":	"x",
+			"value":	2
+		}, [{
+				"declare":	"x",
+				"value":	3
+			}]], {
+		"set":	"out",
+		"value":	"x"
+	}]

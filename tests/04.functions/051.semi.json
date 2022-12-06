@@ -1,0 +1,32 @@
+[{
+		"function":	"add_rec",
+		"args":	["x", "y"],
+		"block":	[{
+				"if":	[{
+						"cond":	{
+							"binop":	"==",
+							"argl":	"x",
+							"argr":	0
+						},
+						"then":	[{
+								"return":	"y"
+							}]
+					}],
+				"else":	[{
+						"return":	{
+							"call":	"add_rec",
+							"args":	["y", {
+									"binop":	"-",
+									"argl":	"x",
+									"argr":	1
+								}]
+						}
+					}]
+			}]
+	}, {
+		"set":	"out",
+		"value":	{
+			"call":	"add_rec",
+			"args":	[4, 3]
+		}
+	}]

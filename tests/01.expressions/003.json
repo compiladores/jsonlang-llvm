@@ -1,0 +1,40 @@
+[{
+		"set":	"out",
+		"value":	{
+			"binop":	"and",
+			"argl":	{
+				"binop":	"|",
+				"argl":	{
+					"binop":	"+",
+					"argl":	{
+						"binop":	"+",
+						"argl":	1,
+						"argr":	{
+							"binop":	"*",
+							"argl":	2,
+							"argr":	5
+						}
+					},
+					"argr":	4
+				},
+				"argr":	{
+					"binop":	"&",
+					"argl":	{
+						"binop":	"+",
+						"argl":	12,
+						"argr":	33
+					},
+					"argr":	256
+				}
+			},
+			"argr":	{
+				"binop":	"<<",
+				"argl":	4,
+				"argr":	{
+					"binop":	"*",
+					"argl":	2,
+					"argr":	3
+				}
+			}
+		}
+	}]

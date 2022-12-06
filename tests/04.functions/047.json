@@ -1,0 +1,17 @@
+[{
+		"function":	"inc",
+		"args":	["x"],
+		"block":	[{
+				"return":	{
+					"binop":	"+",
+					"argl":	"x",
+					"argr":	1
+				}
+			}]
+	}, {
+		"set":	"out",
+		"value":	{
+			"call":	"inc",
+			"args":	[10]
+		}
+	}]

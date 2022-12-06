@@ -1,0 +1,8 @@
+[{
+		"set":	"out",
+		"value":	{
+			"binop":	"+",
+			"argl":	1,
+			"argr":	2
+		}
+	}]

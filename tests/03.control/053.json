@@ -1,0 +1,16 @@
+[{
+		"set":	"x",
+		"value":	1
+	}, {
+		"if":	[{
+				"cond":	{
+					"binop":	">",
+					"argl":	"x",
+					"argr":	0
+				},
+				"then":	[{
+						"set":	"y",
+						"value":	44
+					}]
+			}]
+	}]

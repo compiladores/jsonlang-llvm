@@ -1,0 +1,119 @@
+[{
+		"set":	"x",
+		"value":	{
+			"unop":	"-",
+			"arg":	95
+		}
+	}, {
+		"if":	[{
+				"cond":	{
+					"binop":	">",
+					"argl":	"x",
+					"argr":	0
+				},
+				"then":	[{
+						"set":	"y",
+						"value":	1
+					}]
+			}, {
+				"cond":	{
+					"binop":	"<",
+					"argl":	"x",
+					"argr":	{
+						"unop":	"-",
+						"arg":	100
+					}
+				},
+				"then":	[{
+						"set":	"y",
+						"value":	2
+					}]
+			}, {
+				"cond":	{
+					"binop":	"<",
+					"argl":	"x",
+					"argr":	{
+						"unop":	"-",
+						"arg":	50
+					}
+				},
+				"then":	[{
+						"set":	"y",
+						"value":	{
+							"unop":	"-",
+							"arg":	50
+						}
+					}]
+			}, {
+				"cond":	{
+					"binop":	"<",
+					"argl":	"x",
+					"argr":	{
+						"unop":	"-",
+						"arg":	60
+					}
+				},
+				"then":	[{
+						"set":	"y",
+						"value":	{
+							"unop":	"-",
+							"arg":	60
+						}
+					}]
+			}, {
+				"cond":	{
+					"binop":	"<",
+					"argl":	"x",
+					"argr":	{
+						"unop":	"-",
+						"arg":	65
+					}
+				},
+				"then":	[{
+						"set":	"y",
+						"value":	{
+							"unop":	"-",
+							"arg":	65
+						}
+					}]
+			}, {
+				"cond":	{
+					"binop":	"<",
+					"argl":	"x",
+					"argr":	{
+						"unop":	"-",
+						"arg":	75
+					}
+				},
+				"then":	[{
+						"set":	"y",
+						"value":	{
+							"unop":	"-",
+							"arg":	75
+						}
+					}]
+			}, {
+				"cond":	{
+					"binop":	"<",
+					"argl":	"x",
+					"argr":	{
+						"unop":	"-",
+						"arg":	90
+					}
+				},
+				"then":	[{
+						"set":	"y",
+						"value":	{
+							"unop":	"-",
+							"arg":	90
+						}
+					}]
+			}],
+		"else":	[{
+				"set":	"y",
+				"value":	3
+			}]
+	}, {
+		"set":	"out",
+		"value":	"y"
+	}]
