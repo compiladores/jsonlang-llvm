@@ -20,29 +20,27 @@ export function getIR(code: CompIR0): string[] {
   return ir;
 }
 
-function test(ir: string[]) {
+export async function testmain(filename: string): Promise<string> {
+  const data = Deno.readTextFileSync(filename);
+  const jsonData = JSON.parse(data);
+  const ir = getIR(jsonData as JsonLang);
   const code = ir.join("\n");
   
-  fetch('http://172.19.84.224:8080//',
+  const response = await fetch('http://172.19.84.224:8080//',
     { method: "PUT", body: code })
-    .then((response) => response.text())
-    .then((text) => {
-      console.log(text);
-    });
+    // .then((response) => response.text())
+    // .then((text) => {
+    //   return text;
+    // });
+  
+  return response.text();
 }
 
-export function main(testMode: boolean) {
+export function main() {
   const name = Deno.args[0];
   const data = Deno.readTextFileSync(name);
   const jsonData = JSON.parse(data);
   const ir = getIR(jsonData as JsonLang);
 
-  if (testMode) {
-    test(ir);
-  }
-  else {
-    console.log(ir);
-  }
+  console.log(ir);
 }
-
-main(true);

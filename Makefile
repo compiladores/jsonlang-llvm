@@ -99,10 +99,10 @@ deno:
 setup: .vscode .vscode/settings.json .vscode/launch.json .vscode/extensions.json
 
 integ:
-	./deno run --allow-read main.ts ./tests/01.expressions/001.json
+	./deno run --allow-read launcher.ts ./tests/01.expressions/001.json
 
 run:
-	./deno run main.ts
+	./deno run launcher.ts
 
 run2:
-	./deno run --unstable --allow-read --allow-env --allow-sys main.ts
+	./deno run --unstable --allow-read --allow-env --allow-sys launcher.ts
