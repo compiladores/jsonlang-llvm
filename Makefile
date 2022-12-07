@@ -38,12 +38,12 @@ define LAUNCH_JSON
 {
     "configurations": [
         {
-            "name": "Current file",
+            "name": "Deno",
             "request": "launch",
-            "program":"${file}",
+            "program":"",
             "cwd":"${workspaceFolder}",
             "runtimeExecutable": "${workspaceFolder}/deno",
-            "runtimeArgs": ["run", "--inspect-brk=127.0.0.1:9229","-A"],
+            "runtimeArgs": ["run", "--inspect-brk","-A", "launcher.ts", "./tests/01.expressions/002.json"],
             "attachSimplePort": 9229,
             "type": "node"
         },{
@@ -98,11 +98,12 @@ deno:
 
 setup: .vscode .vscode/settings.json .vscode/launch.json .vscode/extensions.json
 
-integ:
-	./deno run --allow-read launcher.ts ./tests/01.expressions/001.json
-
 run:
-	./deno run launcher.ts
+	./deno run --allow-read launcher.ts $(file_in)
 
-run2:
-	./deno run --unstable --allow-read --allow-env --allow-sys launcher.ts
+compileinteg:
+	cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_C_COMPILER=clang -DCMAKE_CXX_COMPILER=clang++ -DCMAKE_INSTALL_PREFIX=./tests/llTesterWS/out/install/linux-debug -S./tests/llTesterWS -B./tests/llTesterWS/out/build/linux-debug -G Ninja
+	cmake --build ./tests/llTesterWS/out/build/linux-debug
+
+integws:
+	nohup ./tests/llTesterWS/out/build/linux-debug/llTesterWS &

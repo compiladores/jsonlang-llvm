@@ -3,6 +3,7 @@
 #include <iostream>
 #include <fstream>
 #include <stdexcept>
+#include <filesystem>
 
 using std::vector;
 typedef std::string string;
@@ -60,11 +61,11 @@ void handler(HTTP::Request req, HTTP::Response res)
     replace_placeholder(content, finalIR);
 
     {
-        std::ofstream replacedFile("replaced.ll");
+        std::ofstream replacedFile("IR/replaced.ll");
         replacedFile << finalIR;
         replacedFile.close();
     }
-    string executionResult = exec("lli replaced.ll");
+    string executionResult = exec("lli IR/replaced.ll");
 
     res.set_headers(headers);
     res.set_content(executionResult);
@@ -85,7 +86,10 @@ bool contents_of(string path_to_file, string& outContent)
 int main()
 {
     HTTP::Server server;
-    if (!contents_of("template_linux.ll", templateContent))
+    std::filesystem::path path = "IR/template_linux.ll";
+    std::cout << "Absolute path " << std::filesystem::absolute(path) << '\n';
+
+    if (!contents_of(path, templateContent))
         return 1;
 
     server.handle = &handler;

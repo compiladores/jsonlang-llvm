@@ -26,7 +26,7 @@ export async function testmain(filename: string): Promise<string> {
   const ir = getIR(jsonData as JsonLang);
   const code = ir.join("\n");
   
-  const response = await fetch('http://172.19.84.224:8080//',
+  const response = await fetch('http://localhost:8080//',
     { method: "PUT", body: code })
     // .then((response) => response.text())
     // .then((text) => {
